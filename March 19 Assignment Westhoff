@@ -14,18 +14,17 @@ void forward(){
 void r_turn(){
    motor(l_motor,speed);//turn right
    motor(r_motor,-speed);
-   msleep(pause);
 }
 
 int main()
 {
-	while(analog(r_bump)==0){
+	while(digital(r_bump)==0){
 	forward();	
 	}//approach wall
 	ao();
 	msleep(pause);
 	
-	while(analog(l_bump)==0){
+	while(digital(l_bump)==0){
 	r_turn();	
 	}//straighten out
 	ao();
